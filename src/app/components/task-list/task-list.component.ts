@@ -22,23 +22,11 @@ export class TaskListComponent implements OnInit {
     this.loadTasks();
   }
 
-  // loadTasks(): void {
-  //   this.taskService.getTasks().subscribe(
-  //     (data) => {
-  //       this.tasks = data;
-  //       this.filteredTasks = data; // Initialize filtered tasks with all tasks
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching tasks:', error);
-  //     }
-  //   );
-  // }
-
   loadTasks(): void {
-    this.taskService.getTasks({ cache: 'no-cache' }).subscribe(
+    this.taskService.getTasks().subscribe(
       (data) => {
         this.tasks = data;
-        this.filteredTasks = data;
+        this.filteredTasks = data; 
       },
       (error) => {
         console.error('Error fetching tasks:', error);
@@ -46,7 +34,7 @@ export class TaskListComponent implements OnInit {
     );
   }
 
-  deleteTask(taskId: string): void {
+deleteTask(taskId: string): void {
     if (confirm('Are you sure you want to delete this task?')) {
       this.taskService.deleteTask(taskId).subscribe(() => {
         this.tasks = this.tasks.filter((task) => task._id !== taskId);

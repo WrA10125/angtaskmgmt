@@ -10,7 +10,7 @@ export class TaskService {
   private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
-  getTasks(p0: { cache: string; }): Observable<any> {
+  getTasks(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
 
