@@ -103,9 +103,21 @@ export class TaskListComponent implements OnInit {
     this.loadTasks();
   }
 
+  // loadTasks(): void {
+  //   this.taskService.getTasks().subscribe(
+  //     (data) => {
+  //       this.tasks = data;
+  //       this.filteredTasks = data;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching tasks:', error);
+  //     }
+  //   );
+  // }
   loadTasks(): void {
     this.taskService.getTasks().subscribe(
       (data) => {
+        console.log('API Response Data:', data); // Log the API response
         this.tasks = data;
         this.filteredTasks = data;
       },
