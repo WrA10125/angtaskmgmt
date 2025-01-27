@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
-
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,60 +1,7 @@
-<!-- <div class="task-list">
-  <h2>Task List</h2>
-
-  
-  <div class="search-filter">
-    <div>
-      <label for="search">Search Tasks:</label>
-      <input id="search" type="text" [(ngModel)]="filterText" (input)="applyFilter()" placeholder="Search by entity or task type" />
-    </div>
-    <div>
-      <label for="sort">Sort by:</label>
-      <select id="sort" [(ngModel)]="sortCriteria" (change)="onSortChange($event)">
-        <option value="entity_name">Entity Name</option>
-        <option value="task_type">Task Type</option>
-        <option value="time">Time</option>
-        <option value="status">Status</option>
-      </select>
-    </div>
-  </div>
-
-
-  <table>
-    <thead>
-      <tr>
-        <th>Entity</th>
-        <th>Task Type</th>
-        <th>Time</th>
-        <th>Contact Person</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let task of filteredTasks">
-        <td>{{ task.entity_name }}</td>
-        <td>{{ task.task_type }}</td>
-        <td>{{ task.time }}</td>
-        <td>{{ task.contact_person }}</td>
-        <td>
-          <span class="status" [class.open]="task.status === 'open'" [class.closed]="task.status === 'closed'">
-            {{ task.status }}
-          </span>
-        </td>
-        <td class="task-actions">
-          <button (click)="toggleStatus(task)" class="toggle-btn">Toggle Status</button>
-          <button (click)="deleteTask(task._id)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
-
 <div class="task-list">
   <h2>Task List</h2>
 
-  <!-- Search/Filter and Sort Options -->
+
   <div class="search-filter">
     <label for="search">Search Tasks:</label>
     <input
@@ -73,7 +20,7 @@
     </select>
   </div>
 
-  <!-- Task Table -->
+ 
   <table>
     <thead>
       <tr>
@@ -102,6 +49,7 @@
         <td>
           <button (click)="toggleStatus(task)">Toggle Status</button>
           <button (click)="deleteTask(task._id)">Delete</button>
+          <button (click)="editTask(task._id)">Edit</button>
         </td>
       </tr>
     </tbody>

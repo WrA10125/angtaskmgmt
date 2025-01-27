@@ -1,158 +1,49 @@
-// .task-list {
-//   width: 100%;
-//   max-width: 800px;
-//   margin: auto;
-//   padding: 20px;
-//   border: 1px solid #ddd;
-//   border-radius: 8px;
-//   background-color: #ffffff;
-//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-//   h2 {
-//     text-align: center;
-//     color: #333;
-//   }
-
-//   .search-filter,
-//   .sort-options {
-//     display: flex;
-//     justify-content: space-between;
-//     margin-bottom: 15px;
-
-//     label {
-//       margin-right: 10px;
-//     }
-
-//     input,
-//     select {
-//       padding: 8px;
-//       font-size: 16px;
-//       border-radius: 5px;
-//       border: 1px solid #ccc;
-//       width: 200px;
-//     }
-//   }
-
-//   table {
-//     width: 100%;
-//     border-collapse: collapse;
-//     margin-top: 15px;
-//   }
-
-//   th, td {
-//     padding: 10px;
-//     text-align: left;
-//     border-bottom: 1px solid #ddd;
-//   }
-
-//   th {
-//     background-color: #f4f4f4;
-//     font-weight: bold;
-//   }
-
-//   .status {
-//     font-weight: bold;
-//     padding: 5px 10px;
-//     border-radius: 4px;
-//   }
-
-//   .open {
-//     color: green;
-//   }
-
-//   .closed {
-//     color: red;
-//   }
-
-//   .task-actions {
-//     display: flex;
-//     gap: 10px;
-
-//     button {
-//       padding: 5px 10px;
-//       margin: 5px;
-//       border: none;
-//       cursor: pointer;
-//       border-radius: 4px;
-//       transition: 0.3s ease;
-
-//       &:first-child {
-//         background-color: #007bff;
-//         color: white;
-//       }
-
-//       &:first-child:hover {
-//         background-color: #0056b3;
-//       }
-
-//       &:last-child {
-//         background-color: #dc3545;
-//         color: white;
-//       }
-
-//       &:last-child:hover {
-//         background-color: #b71c1c;
-//       }
-
-//       &.toggle-btn {
-//         background-color: #ffeb3b;
-//         color: black;
-//         &:hover {
-//           background-color: #fbc02d;
-//         }
-//       }
-//     }
-//   }
-// }
-
-
-
 .task-list {
-  padding: 20px;
+  margin: 20px;
 }
 
 .search-filter {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
-}
-
-.search-filter label {
-  margin-right: 10px;
-}
-
-.search-filter input,
-.search-filter select {
-  padding: 8px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-table th, table td {
-  padding: 12px;
+table th,
+table td {
   border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f4f4f4;
 }
 
 button {
-  padding: 6px 12px;
-  border: none;
-  background-color: #4caf50;
-  color: white;
+  padding: 5px 10px;
+  margin: 0 5px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-right: 5px;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #007bff;
+  color: white;
 }
 
-@media (max-width: 768px) {
-  table {
-    font-size: 14px;
-  }
+.status {
+  font-weight: bold;
+}
+
+.status.open {
+  color: green;
+}
+
+.status.closed {
+  color: red;
 }

@@ -1,60 +1,6 @@
-<!-- <div class="task-form">
-  <h2>Create New Task</h2>
-  <form (submit)="createTask(); $event.preventDefault()">
-    <label for="entityName">Entity Name:</label>
-    <input
-      id="entityName"
-      type="text"
-      [(ngModel)]="task.entity_name"
-      name="entityName"
-      required
-      placeholder="Enter entity name"
-    />
-
-    <label for="taskType">Task Type:</label>
-    <input
-      id="taskType"
-      type="text"
-      [(ngModel)]="task.task_type"
-      name="taskType"
-      required
-      placeholder="Enter task type"
-    />
-
-    <label for="taskTime">Time:</label>
-    <input
-      id="taskTime"
-      type="datetime-local"
-      [(ngModel)]="task.time"
-      name="taskTime"
-      required
-    />
-
-    <label for="contactPerson">Contact Person:</label>
-    <input
-      id="contactPerson"
-      type="text"
-      [(ngModel)]="task.contact_person"
-      name="contactPerson"
-      required
-      placeholder="Enter contact person"
-    />
-
-    <label for="taskNote">Note (Optional):</label>
-    <textarea
-      id="taskNote"
-      [(ngModel)]="task.note"
-      name="taskNote"
-      placeholder="Enter additional notes (optional)"
-    ></textarea>
-
-    <button type="submit">Create Task</button>
-  </form>
-</div> -->
-
 <div class="task-form">
-  <h2>Create New Task</h2>
-  <form (submit)="createTask(); $event.preventDefault()">
+  <h2>{{ isEditMode ? 'Edit Task' : 'Create New Task' }}</h2>
+  <form (submit)="createOrUpdateTask(); $event.preventDefault()">
     <label for="entityName">Entity Name:</label>
     <input
       id="entityName"
@@ -102,6 +48,6 @@
       placeholder="Enter additional notes (optional)"
     ></textarea>
 
-    <button type="submit">Create Task</button>
+    <button type="submit">{{ isEditMode ? 'Update Task' : 'Create Task' }}</button>
   </form>
 </div>
